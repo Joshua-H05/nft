@@ -8,12 +8,11 @@ soup = bs4.BeautifulSoup(page.content, "html.parser")  # why should there be no 
 
 
 def print_links():
-    links = soup.find_all("a")
+    links = soup.find_all("a")  # The a stands for "anchor"
     for link in links:
-        print(link)
-    print("__________")
-    for link in links:
-        print(link.get("href"))
+        link = link.get("href")
+        if link:
+            print(link)
 
     # This function prints None a couple of times in between the links. Is it because there are links that have the
     # "a" tag but don't have href attributes? For example, "Yu'an Hu" contains a link but the link isn't displayed

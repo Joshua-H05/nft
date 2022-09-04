@@ -4,7 +4,7 @@ import requests
 url = "https://yuan-hu.blogspot.com/2022/07/joshuas-first-post.html"
 page = requests.get(url)
 soup = bs4.BeautifulSoup(page.content, "html.parser")  # why should there be no parentheses after "content"?
-# Content is a data item not a function
+# Content is a data item not a function, so by saying page.content, you're accessing
 
 
 def print_links():
